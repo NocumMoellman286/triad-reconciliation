@@ -1,0 +1,8 @@
+name: supplementary_silent_mode
+variant: full
+notes: "Reads the silent-mode table from a deployment log the caller supplies."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+model: {}

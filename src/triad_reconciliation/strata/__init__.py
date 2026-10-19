@@ -1,0 +1,1 @@
+"""Declared strata families."""

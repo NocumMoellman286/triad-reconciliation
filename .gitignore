@@ -1,0 +1,19 @@
+# Run artefacts and any staged cohort root.
+#
+# Both entries are anchored to the top level on purpose: the source package also carries
+# data/ and models/ directories, and an unanchored pattern would exclude them from a commit.
+/data/
+/runs/
+/models/
+
+# Build and tool caches.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+.venv/
+.DS_Store

@@ -1,0 +1,8 @@
+name: ablation_without_arbitration_head
+variant: without_arbitration_head
+notes: "Keeps only outcome supervision, so the direction is composed from the progression readout and the stream weight."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+model: {}

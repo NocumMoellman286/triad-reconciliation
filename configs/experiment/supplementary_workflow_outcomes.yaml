@@ -1,0 +1,8 @@
+name: supplementary_workflow_outcomes
+variant: full
+notes: "Reads the workflow table from a deployment log the caller supplies."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+model: {}

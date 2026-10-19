@@ -1,0 +1,22 @@
+# Reconciling stack shape.
+#
+# The manuscript names the two encoders, the reconciliation operator and the arbitration
+# head without printing any width, depth or head count, so every value here is a released
+# constant rather than a reported one. The margin is the point the stream weight is compared
+# against in the attribution-consistency term.
+model:
+  vision_token_dim: 96
+  volume_patch_edge: 2
+  morphometry_tokens: 1
+  language_dim: 96
+  language_layers: 2
+  language_heads: 4
+  language_vocab: 512
+  max_perimetry_tokens: 28
+  adapter_bottleneck: 24
+  reconciliation_heads: 4
+  reconciliation_layers: 2
+  dropout: 0.12
+  max_visits: 8
+  time_features: 16
+  stream_weight_margin: 0.46

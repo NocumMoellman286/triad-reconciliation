@@ -1,0 +1,1217 @@
+{
+  "claim_summary": {
+    "execution": 65,
+    "mapping": 15,
+    "resolved": 80,
+    "total": 80,
+    "unresolved": []
+  },
+  "claims": [
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C001",
+      "location": "Abstract, p. 1",
+      "missing_symbols": [],
+      "statement": "The study reconciles serial optic-disc imaging with serial perimetry rather than optimising an average discrimination.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.analysis.pipeline:run_study"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C002",
+      "location": "Abstract, p. 1",
+      "missing_symbols": [],
+      "statement": "The model reports, for each decision, how much of it rests on each stream.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.triad:TriadModel",
+        "triad_reconciliation.models.reconciliation:CrossStreamReconciliation"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C003",
+      "location": "Sec. 1, p. 3",
+      "missing_symbols": [],
+      "statement": "Reconciliation is expressed as a stream-evidence weight statement and a direction of arbitration.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.triad:TriadOutput"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C004",
+      "location": "Sec. 1, p. 3",
+      "missing_symbols": [],
+      "statement": "The consistency term prevents a contradiction between the expressed attribution and the decision.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.losses.consistency:consistency_loss"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C005",
+      "location": "Sec. 1, p. 3",
+      "missing_symbols": [],
+      "statement": "A hidden agreement state modifies the objective for conflicting pairs.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.losses.reweighting:agreement_weights"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C006",
+      "location": "Sec. 1, p. 3 (Proposition 1)",
+      "missing_symbols": [],
+      "statement": "The stream-evidence weight is identifiable only when the two streams' evidence is separated by more than the inverse Lipschitz constant of the fusion map.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.identifiability:identifiable",
+        "triad_reconciliation.metrics.identifiability:estimate_lipschitz"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C007",
+      "location": "Sec. 1, p. 3 (Theorem 1)",
+      "missing_symbols": [],
+      "statement": "The excess risk of the arbitration classifier splits into a temporal-alignment term and a term in the effective number of discordant training pairs.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.excess_risk:decompose"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C008",
+      "location": "Sec. 1, p. 3",
+      "missing_symbols": [],
+      "statement": "Fusion suffices for the concordant majority and reconciliation is needed only for the discordant minority.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.strata.partitions:discordance_strata"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C009",
+      "location": "Sec. 2.1, p. 4",
+      "missing_symbols": [],
+      "statement": "The two regions are separated, with testing on the sites that took no part in development.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.cohort.splits:split_regions"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C010",
+      "location": "Sec. 2.1, p. 4",
+      "missing_symbols": [],
+      "statement": "Discrimination is reported as the area under the receiver-operating-characteristic curve.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.discrimination:auroc"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C011",
+      "location": "Sec. 2.1, p. 4",
+      "missing_symbols": [],
+      "statement": "Precision-recall is reported as the area under the precision-recall curve.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.discrimination:average_precision"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C012",
+      "location": "Sec. 2.1, p. 4",
+      "missing_symbols": [],
+      "statement": "Sensitivity is reported at a matched specificity.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.discrimination:sensitivity_at_specificity"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C013",
+      "location": "Sec. 2.1, p. 5",
+      "missing_symbols": [],
+      "statement": "An alignment operator over the visit times is monotone and independent of any visit later than the query time.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.alignment:MonotoneCausalAlignment"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C014",
+      "location": "Sec. 2.1, p. 5",
+      "missing_symbols": [],
+      "statement": "Serial optic-disc recordings feed a backbone adapted to optic-disc imaging.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.encoders:VisionEncoder"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C015",
+      "location": "Sec. 2.1, p. 5",
+      "missing_symbols": [],
+      "statement": "Serial perimetry reports feed an adapter-enhanced language encoder that tokenises both streams into a common token space.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.encoders:LanguageEncoder",
+        "triad_reconciliation.models.adapters:BottleneckAdapter"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C016",
+      "location": "Sec. 2.1, p. 5",
+      "missing_symbols": [],
+      "statement": "The reconciliation emits a calibrated probability, an arbitral direction, and the stream weight with its consistency term.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.conformal:deferral_analysis"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C017",
+      "location": "Table 1, p. 6-8",
+      "missing_symbols": [],
+      "statement": "Fifteen methods are evaluated on the same test units, and each row carries discrimination, calibration and agreement.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.roster:ROSTER"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C018",
+      "location": "Table 1 caption, p. 6",
+      "missing_symbols": [],
+      "statement": "Agreement is Cohen's kappa between the predicted arbitration direction and the recorded arbitration, computed on the discordant subset.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.agreement:cohen_kappa"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C019",
+      "location": "Table 1 caption, p. 6",
+      "missing_symbols": [],
+      "statement": "The three clinical rules emit a decision and no probability, so no calibration error is defined for them.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.clinical_rules:binary_decisions"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C020",
+      "location": "Sec. 2.2, p. 8",
+      "missing_symbols": [],
+      "statement": "The advantage is confined to the visit-pairs whose streams disagree.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.analysis.pipeline:discordance_analysis"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C021",
+      "location": "Sec. 2.2, p. 8",
+      "missing_symbols": [],
+      "statement": "The component analysis isolates the effect of removing the reconciliation state.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.triad:VariantFlags"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C022",
+      "location": "Sec. 2.2, p. 8",
+      "missing_symbols": [],
+      "statement": "Removing the attribution-consistency term leaves discrimination roughly unchanged and reduces agreement.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.losses.consistency:contradiction_mask"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C023",
+      "location": "Sec. 2.2, p. 8",
+      "missing_symbols": [],
+      "statement": "Removing the agreement-state re-weighting costs more in the discordant stratum than overall.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.losses.reweighting:discordant_weight_mass"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C024",
+      "location": "Table 2, p. 9",
+      "missing_symbols": [],
+      "statement": "The interaction row removes the arbitration head and the reconciliation state together.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.triad:VariantFlags"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C025",
+      "location": "Sec. 2.3, p. 9",
+      "missing_symbols": [],
+      "statement": "Agreement is reported against the recorded reference arbitration, whose own inter-reader agreement is the attainable ceiling.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.readers.study:inter_reader_agreement"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C026",
+      "location": "Sec. 2.3, p. 9",
+      "missing_symbols": [],
+      "statement": "The strongest attribution proxy is the post-hoc attention of the unconstrained comparator.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.timeline:ConcatenatedTimelineTransformer.attention_attribution"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C027",
+      "location": "Sec. 2.3, p. 9",
+      "missing_symbols": [],
+      "statement": "The design analyses report an alignment error in years beside the separation of the stream weight.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.excess_risk:alignment_error",
+        "triad_reconciliation.metrics.identifiability:separation_of_weight"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C028",
+      "location": "Sec. 2.4, p. 11",
+      "missing_symbols": [],
+      "statement": "Machine advice is assessed in a three-arm reader study with a washout between arms.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.readers.study:summarise_arm"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C029",
+      "location": "Sec. 2.4, p. 11",
+      "missing_symbols": [],
+      "statement": "Over-reliance is the share of cases with wrong advice that the reader adopted.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.readers.reliance:reliance_report"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C030",
+      "location": "Sec. 2.4, p. 11",
+      "missing_symbols": [],
+      "statement": "Under-reliance is the share of cases with correct advice that the reader rejected.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.readers.reliance:reliance_report"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C031",
+      "location": "Sec. 2.4, p. 11",
+      "missing_symbols": [],
+      "statement": "Inter-reader agreement is computed over the reader-by-vignette matrix.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.readers.study:reader_matrix"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C032",
+      "location": "Sec. 3.1, p. 11",
+      "missing_symbols": [],
+      "statement": "The reliance asymmetry, not the accuracy of the model, limits the benefit of the advice.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.readers.reliance:RelianceReport.asymmetry"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C033",
+      "location": "Sec. 5.1, p. 13",
+      "missing_symbols": [],
+      "statement": "The structural stream gathers optic-disc imaging and the functional stream gathers perimetry reports.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.core.records:StructuralVisit",
+        "triad_reconciliation.core.records:PerimetryVisit"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C034",
+      "location": "Sec. 5.1, p. 13",
+      "missing_symbols": [],
+      "statement": "A visit-pair is an index visit with its closest neighbour on the other timeline.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.cohort.visit_pairs:build_visit_pairs"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C035",
+      "location": "Sec. 5.1, p. 13",
+      "missing_symbols": [],
+      "statement": "The arbitration label takes the values structural, functional and concordant.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.core.records:ARBITRATION_CLASSES"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C036",
+      "location": "Sec. 5.1, p. 13",
+      "missing_symbols": [],
+      "statement": "The model maps the two streams to a progression probability, an arbitration direction and a stream weight.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.triad:TriadModel.forward"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C037",
+      "location": "Sec. 5.1, p. 13",
+      "missing_symbols": [],
+      "statement": "Two estimands are specified beforehand: discrimination for progression and kappa of the direction on discordant pairs.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.inference.sequential:fixed_sequence"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C038",
+      "location": "Sec. 5.2, p. 13",
+      "missing_symbols": [],
+      "statement": "The cohort is a private anonymised multicentre set at four sites in two regions, and the release distributes no record from it.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.cohort.reader:read_cohort",
+        "triad_reconciliation.cohort.schema:schema_card"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C039",
+      "location": "Sec. 5.2, p. 14",
+      "missing_symbols": [],
+      "statement": "A strict patient-level separation is held between development and testing.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.cohort.splits:Partition.overlap"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C040",
+      "location": "Sec. 5.2, p. 14",
+      "missing_symbols": [],
+      "statement": "The units of analysis are the patient, the eye, the visit and the visit-pair; the released reader reads the table the caller supplies and the schema declares what it must carry.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.cohort.reader:read_cohort",
+        "triad_reconciliation.cohort.splits:coverage_report"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C041",
+      "location": "Sec. 5.2, p. 14",
+      "missing_symbols": [],
+      "statement": "Four auxiliary resources are used for representation pretraining, and each has an access route, conditions and an image count.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.roster:ROSTER"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C042",
+      "location": "Sec. 5.3, p. 14",
+      "missing_symbols": [],
+      "statement": "The reference standard is agreement between three specialists with adjudication by a fourth.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.readers.study:Vignette"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C043",
+      "location": "Sec. 5.3, p. 14",
+      "missing_symbols": [],
+      "statement": "Reference arbitration is structural-dominant, functional-dominant or unresolved at the review.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.core.records:ArbitrationLabel"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C044",
+      "location": "Sec. 5.3, p. 14",
+      "missing_symbols": [],
+      "statement": "Two further progression standards are analysed independently for sensitivity of the conclusions.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.clinical_rules:all_rules"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C045",
+      "location": "Sec. 5.4, p. 14",
+      "missing_symbols": [],
+      "statement": "The alignment weights increase along the clinical timeline and are exactly zero for any source at or beyond the query time.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.alignment:MonotoneCausalAlignment.forward"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C046",
+      "location": "Sec. 5.4, p. 15",
+      "missing_symbols": [],
+      "statement": "The reconciling state is obtained through cross-stream attention and the stream weight is its sigmoid readout.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.reconciliation:CrossStreamReconciliation.forward"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C047",
+      "location": "Sec. 5.5, p. 15",
+      "missing_symbols": [],
+      "statement": "A softmax classifier over the three arbitration classes translates the reconciling state into the direction.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.heads:ArbitrationHead"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C048",
+      "location": "Sec. 5.5, p. 15",
+      "missing_symbols": [],
+      "statement": "The agreement state is inferred from the same latent as the direction.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.heads:AgreementHead"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C049",
+      "location": "Sec. 5.5, p. 15",
+      "missing_symbols": [],
+      "statement": "The pair weight is one plus the re-weighting strength on a pair read as discordant.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.losses.reweighting:agreement_weights"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C050",
+      "location": "Sec. 5.5, p. 15",
+      "missing_symbols": [],
+      "statement": "The consistency term penalises a decision whose attribution contradicts it, by the distance to the margin.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.losses.consistency:consistency_loss"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C051",
+      "location": "Sec. 5.5, p. 15",
+      "missing_symbols": [],
+      "statement": "The objective is the weighted sum of the progression, arbitration and consistency terms over the summed weights.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.losses.objective:reconciliation_objective"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C052",
+      "location": "Algorithm 1, p. 16",
+      "missing_symbols": [],
+      "statement": "Training initialises the vision encoder, the adapter-augmented language encoder, the reconciliation module and the arbitration head.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.models.triad:TriadModel.__init__"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C053",
+      "location": "Algorithm 1, p. 16",
+      "missing_symbols": [],
+      "statement": "The structural tokens carry an acquisition-time encoding and the functional tokens a visit-time encoding.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.streams.timeenc:sinusoidal_time"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C054",
+      "location": "Algorithm 1, p. 16",
+      "missing_symbols": [],
+      "statement": "The parameters are updated with AdamW under a cosine schedule.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.analysis.trainer:build_optimizer",
+        "triad_reconciliation.analysis.trainer:learning_rate_at"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C055",
+      "location": "Algorithm 1, p. 16",
+      "missing_symbols": [],
+      "statement": "The epoch loop visits each mini-batch of development visit-pairs and updates on the weighted objective.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.analysis.trainer:fit_binary_module"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C056",
+      "location": "Sec. 5.6, p. 15",
+      "missing_symbols": [],
+      "statement": "Discrimination is reported separately as area under the curve and as sensitivity at a fixed specificity.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.discrimination:roc_curve"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C057",
+      "location": "Sec. 5.6, p. 15",
+      "missing_symbols": [],
+      "statement": "Calibration is reported as expected calibration error, Brier score, calibration slope and intercept.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.calibration:calibration_slope_intercept",
+        "triad_reconciliation.metrics.calibration:expected_calibration_error"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C058",
+      "location": "Sec. 5.6, p. 15",
+      "missing_symbols": [],
+      "statement": "Comparative intervals are cluster-bootstrapped with the patient as the resampling unit.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.inference.cluster_bootstrap:bootstrap_interval"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C059",
+      "location": "Sec. 5.6, p. 16",
+      "missing_symbols": [],
+      "statement": "Kappa is reported with a cluster-bootstrap interval.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.inference.cluster_bootstrap:percentile_interval"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C060",
+      "location": "Sec. 5.6, p. 16",
+      "missing_symbols": [],
+      "statement": "Multiplicity is controlled by a fixed-sequence method in the stated order.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.inference.sequential:fixed_sequence"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C061",
+      "location": "Sec. 5.6, p. 16",
+      "missing_symbols": [],
+      "statement": "Each comparison runs in matched pairs on the same test units so no cohort is blended.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.inference.paired:paired_difference"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C062",
+      "location": "Sec. 5.6, p. 16",
+      "missing_symbols": [],
+      "statement": "Two thousand bootstrap replicates are taken and a percentile interval is evaluated.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.core.config:InferenceConfig"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C063",
+      "location": "Sec. 5.6, p. 16",
+      "missing_symbols": [],
+      "statement": "A minimum detectable difference is fixed for the discrimination, agreement, reader-accuracy and deferral endpoints before the test set is evaluated.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.core.config:InferenceConfig",
+        "triad_reconciliation.metrics.agreement:cohen_kappa"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C064",
+      "location": "Sec. 5.7, p. 17",
+      "missing_symbols": [],
+      "statement": "Coverage, the ratio of viable records collected, is reported beside discrimination.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.deployment.silent_mode:silent_mode_metrics",
+        "triad_reconciliation.cohort.splits:coverage_report"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C065",
+      "location": "Sec. 5.8, p. 17",
+      "missing_symbols": [],
+      "statement": "The analysis is deterministic under the recorded initial settings.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.core.seeding:set_seed"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C066",
+      "location": "Sec. 5.8, p. 17 (Code availability)",
+      "missing_symbols": [],
+      "statement": "The release carries a schema for perimetry serialisation.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.streams.perimetry:serialise_report",
+        "triad_reconciliation.streams.perimetry:build_vocabulary"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C067",
+      "location": "Sec. 5.8, p. 17 (Code availability)",
+      "missing_symbols": [],
+      "statement": "The release carries the definition of how the splits were made.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.cohort.splits:split_calibration"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C068",
+      "location": "Sec. 5.8, p. 17 (Code availability)",
+      "missing_symbols": [],
+      "statement": "The release computes the conformal calibration quantiles.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.metrics.conformal:conformal_quantile"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C069",
+      "location": "Table 5, p. 22",
+      "missing_symbols": [],
+      "statement": "Workflow outcomes are reported as sensitivity at matched specificity, treatment-escalation agreement, review-interval agreement, lead time, reclassification and net benefit.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.deployment.workflow:workflow_outcome"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C070",
+      "location": "Table 5, p. 22",
+      "missing_symbols": [],
+      "statement": "Net benefit comes from decision-curve analysis at a threshold probability.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.deployment.workflow:net_benefit"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C071",
+      "location": "Table 5, p. 22",
+      "missing_symbols": [],
+      "statement": "Subgroup areas are reported by disease stage, perimetry reliability, high myopia, age, sex and recorded ancestry group.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.strata.partitions:all_strata"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C072",
+      "location": "Table 6, p. 23",
+      "missing_symbols": [],
+      "statement": "The silent run reports eligible encounters, scored encounters and the two unscored reasons separately.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.deployment.silent_mode:EncounterRecord"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C073",
+      "location": "Table 6, p. 23",
+      "missing_symbols": [],
+      "statement": "Latency is reported as a median with an interquartile range over scored pairs.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.deployment.silent_mode:silent_mode_metrics"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C074",
+      "location": "Table 6, p. 23",
+      "missing_symbols": [],
+      "statement": "An attribution is emitted with every scored decision and its consistency is audited.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.deployment.silent_mode:SilentModeMetrics"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C075",
+      "location": "Table 6, p. 23",
+      "missing_symbols": [],
+      "statement": "The deferred decisions returned to review have an acceptance rate.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.deployment.silent_mode:deployment_log_summary"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C076",
+      "location": "Table 7, p. 24",
+      "missing_symbols": [],
+      "statement": "Each comparator is listed with its family and exactly what it receives.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.roster:ComparatorSpec"
+      ],
+      "verification": "mapping"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C077",
+      "location": "Table 1 row 2, p. 6",
+      "missing_symbols": [],
+      "statement": "The visual field index trend is a clinical rule over serial perimetry.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.clinical_rules:visual_field_index_trend"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C078",
+      "location": "Table 1 rows 4-5, p. 6",
+      "missing_symbols": [],
+      "statement": "Structure-function regression is reported in a linear and a kernel variant over the optic-disc summary and the perimetry indices.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.structure_function:kernel_structure_function"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C079",
+      "location": "Table 1 row 11, p. 7",
+      "missing_symbols": [],
+      "statement": "The multimodal language comparator is prompted zero-shot rather than fitted.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.comparators.zero_shot:zero_shot_scores"
+      ],
+      "verification": "execution"
+    },
+    {
+      "code_present": true,
+      "details": [],
+      "family": "code",
+      "id": "C080",
+      "location": "Sec. 5.5, p. 15",
+      "missing_symbols": [],
+      "statement": "The weight is one plus lambda on a pair the model reads as discordant, with lambda fixed on the development group.",
+      "status": "PASS",
+      "symbols": [
+        "triad_reconciliation.core.config:TrainConfig.reweighting_strength"
+      ],
+      "verification": "execution"
+    }
+  ],
+  "deviations": [
+    {
+      "departs": "The analysed cohort is not distributed and this release produces nothing in its place. Every command that reads records takes the table from the caller with --cohort and stops without one.",
+      "location": "Data availability, p. 17; Sec. 5.2, p. 13-14",
+      "why": "The manuscript withholds institution and site identities and states that the records are held under the sites' agreements. Every record-level quantity the article reports is therefore reported BLOCKED with that reason, and no value is produced from records the release does not hold."
+    },
+    {
+      "departs": "The agreement state carries supervision through the collapsed arbitration label.",
+      "location": "Sec. 5.5, p. 15",
+      "why": "The manuscript describes the state as inferred from the latent and prints no loss term for it; without any signal the re-weighting strength has no effect on the objective and its reported ablation would be untestable."
+    },
+    {
+      "departs": "The zero-shot comparator is reproduced as a prompt-template lexical scorer over the serialisation vocabulary. No language-model weights ship.",
+      "location": "Sec. 2.1, p. 5; Table 7 row 13",
+      "why": "The manuscript names a multimodal language model prompted zero-shot and releases no checkpoint, so the comparator is rebuilt from its prompt rather than from weights."
+    },
+    {
+      "departs": "The reader study is computed from a response table the caller supplies; no reader responses ship.",
+      "location": "Sec. 2.4, p. 11; Table 4, p. 12",
+      "why": "Reader responses are site-held records. The release carries the accounting, the reliance decomposition and the inter-reader agreement, and reports the table values as BLOCKED."
+    },
+    {
+      "departs": "The silent-mode and workflow tables are computed from a deployment log the caller supplies; no log ships.",
+      "location": "Table 6, p. 23; Sec. 5.7, p. 17",
+      "why": "The silent run was performed at the participating sites. The release carries every rate the table prints and reports the values as BLOCKED."
+    },
+    {
+      "departs": "Minimum detectable differences and bootstrap replicate counts are read as design constants; the manuscript prints four of them for five hypotheses.",
+      "location": "Sec. 5.6, p. 15-16",
+      "why": "The mismatch is recorded as a manuscript finding rather than resolved by inventing a threshold for the unmapped hypothesis."
+    }
+  ],
+  "engineering_defaults": {
+    "agreement.supervision": "the agreement state is inferred from the latent and the manuscript prints no signal that supervises it directly; the released readout is trained against the arbitration label collapsed to concordant or discordant, and the switch that turns that off exists only for the component analysis",
+    "arbitration.outcome_derived_rule": "in the variant that removes the arbitration head the direction is composed from the progression readout and the stream weight; the manuscript prints no rule for this composition",
+    "cohort.calibration_share": "the fraction of held-out patients whose scores the conformal threshold is fitted on; the manuscript prints the nominal coverage, not the split",
+    "cohort.held_out_region": "the region label the release treats as held out; Sec. 5.2 prints the two regions without printing which label a supplied table will carry",
+    "cohort.pairing_window": "the window a perimetry visit is paired with the nearest imaging visit is a released constant; Sec. 5.4 names the pairing without printing the window",
+    "cohort.row_grouping": "the reader groups rows by the eye_id a caller supplies; the manuscript names the units of analysis without printing a column convention",
+    "identifiability.fusion_gain": "the fusion map's gain is used by the identifiability analysis and by its check; the manuscript prints no gain",
+    "loss.consistency_margin": "the margin the stream weight is compared against in the consistency term is a released constant; the manuscript names the term without printing the margin",
+    "loss.reweighting_strength": "lambda is fixed on the development group per Sec. 5.5; no value is printed",
+    "model.volume_edge": "the optic-nerve-head grid is carried at the resolution the released table uses",
+    "model.widths": "token widths, head counts, layer counts and dropout are released constants; the manuscript names the encoders and the reconciliation operator without printing any shape",
+    "perimetry.vocabulary": "the perimetry serialisation schema and its bucket edges are release designs; the manuscript names the schema without printing it",
+    "stages.bandwidth": "the kernel structure-function comparator takes its bandwidth from the median pairwise distance; no bandwidth is printed",
+    "table.renderer": "reported values are rendered from what ran; no value in the tables is transcribed from the manuscript",
+    "train.optimizer": "AdamW under a cosine schedule is printed in Algorithm 1; the learning rate, weight decay, batch size, warm-up, epoch count, precision and clipping come from the release",
+    "workflow.decision_rule": "the progression probability is mapped to treatment escalation and to a review interval by released bands; the manuscript prints the threshold probability only"
+  },
+  "paper": {
+    "analysed_cohort_distributed": false,
+    "auxiliary_image_total": 9678,
+    "cohort_source": "supplied by the caller with --cohort",
+    "package": "triad_reconciliation",
+    "title": "Temporal Vision-Language Reconciliation of Optic Disc Images and Visual Fields",
+    "venue": "npj Digital Medicine"
+  },
+  "summary": {
+    "claims_checked": 80.0,
+    "claims_with_code_failures": 0.0,
+    "code_status": "PASS",
+    "conformance_checks": 6.0,
+    "conformance_failures": 0.0,
+    "execution_blocked": 11.0,
+    "execution_checks": 58.0,
+    "execution_failures": 0.0,
+    "execution_not_run": 0.0,
+    "hygiene_findings": 0.0,
+    "manuscript_arithmetic_findings": 4.0,
+    "manuscript_checks": 42.0,
+    "manuscript_status": "FAIL",
+    "overall_status": "PARTIALLY_VERIFIED"
+  }
+}

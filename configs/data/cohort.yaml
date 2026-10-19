@@ -1,0 +1,16 @@
+# How the pipeline reads the cohort table a caller supplies.
+#
+# The analysed records are not distributed, so nothing about their number, their follow-up or
+# their label mix is fixed here. What is fixed is the reading convention the manuscript
+# describes: the two grids a visit-pair is taken between, the region held out for testing, and
+# the split the conformal threshold is fitted on.
+#
+# Ref: Sec. 5.2 (the two regions), Sec. 5.4 (the imaging and perimetry grids), Sec. 5.6 (the
+# calibration split), Sec. 5.8 (a deterministic analysis under the recorded settings).
+cohort:
+  seed: 20260219
+  held_out_region: II
+  imaging_interval_months: 12
+  perimetry_interval_months: 6
+  pairing_window_share: 0.75
+  calibration_share: 0.5

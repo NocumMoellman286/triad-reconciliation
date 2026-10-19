@@ -1,0 +1,8 @@
+name: ablation_without_monotone_causal_alignment
+variant: without_monotone_causal_alignment
+notes: "Replaces the monotone causal operator with unrestricted cross-time attention."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+model: {}

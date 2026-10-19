@@ -1,0 +1,23 @@
+Verification summary
+===================
+overall status            : PARTIALLY_VERIFIED
+code status               : PASS
+manuscript status         : FAIL
+claims checked            : 80
+claims with code failures : 0
+manuscript findings       : 4
+execution checks          : 58
+execution failures        : 0
+execution blocked         : 11
+execution not run         : 0
+conformance checks        : 6
+conformance failures      : 0
+hygiene findings          : 0
+
+A manuscript finding is a disagreement between two statements inside the article's own printed values, or between the number of hypotheses and the number of pre-specified thresholds it prints. It is not a defect of this release and it does not enter the code status. The analysed records are not distributed and this release generates none: every record-level analysis is reported BLOCKED with the staging instruction, the numerical checks run on tensor batches drawn from a recorded seed, and the reader is exercised on a hand-written table in the unit suite.
+
+manuscript finding M101 at Sec. 2.1, p. 4 versus Table 1 row 8, p. 6
+manuscript finding M102 at Sec. 2.1, p. 4 versus Table 1 row 13, p. 7
+manuscript finding M103 at Sec. 2.2, p. 8 versus Table 2 row 3, p. 9
+manuscript finding M104 at Sec. 5.6, p. 16
+

@@ -1,0 +1,8 @@
+name: ablation_interaction_state_and_head
+variant: interaction_state_and_head
+notes: "Removes the reconciling state and the arbitration head together, the row the design predicts is worse than the sum of the two."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+model: {}

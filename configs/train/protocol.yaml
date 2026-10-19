@@ -1,0 +1,33 @@
+# Optimisation and reporting protocol.
+#
+# Algorithm 1 prints AdamW under a cosine schedule; every other training constant is a
+# released value because the manuscript prints no schedule. The inference block carries the
+# design constants the statistical section does print: the replicate count, the two
+# specificity levels, the nominal coverage, the threshold probability and the four minimum
+# detectable differences.
+train:
+  optimizer: adamw
+  scheduler: cosine
+  learning_rate: 0.00058
+  weight_decay: 0.013
+  betas: [0.9, 0.97]
+  batch_size: 24
+  epochs: 32
+  warmup_fraction: 0.08
+  grad_clip: 1.0
+  precision: bf16
+  reweighting_strength: 2.35
+  consistency_weight: 0.65
+  world_size: 1
+inference:
+  bootstrap_replicates: 2000
+  specificity_target: 0.95
+  matched_specificity: 0.90
+  calibration_bins: 15
+  nominal_coverage: 0.90
+  decision_threshold: 0.20
+  minimum_detectable_difference:
+    discrimination: 0.030
+    agreement: 0.05
+    reader_accuracy_pp: 5.0
+    deferral_intervals: 1.0

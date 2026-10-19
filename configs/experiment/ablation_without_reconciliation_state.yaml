@@ -1,0 +1,8 @@
+name: ablation_without_reconciliation_state
+variant: without_reconciliation_state
+notes: "Removes the reconciling state and falls back to per-visit late fusion."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+model: {}

@@ -1,0 +1,8 @@
+name: ablation_with_numeric_perimetry_input
+variant: with_numeric_perimetry_input
+notes: "Replaces the adapter-augmented language encoder with a numeric perimetry vector."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+model: {}

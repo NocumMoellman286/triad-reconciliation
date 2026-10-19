@@ -1,0 +1,9 @@
+name: ablation_without_calibrated_deferral
+variant: without_calibrated_deferral
+notes: "Decides every pair, losing the coverage guarantee."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+inference:
+  nominal_coverage: 0.90

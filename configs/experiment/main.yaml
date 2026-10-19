@@ -1,0 +1,8 @@
+name: main
+variant: full
+notes: "The reported model: monotone causal alignment, the reconciling state, the arbitration head, the attribution-consistency term, agreement-state re-weighting and calibrated deferral."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+model: {}

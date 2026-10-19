@@ -1,0 +1,9 @@
+name: ablation_without_attribution_consistency
+variant: without_attribution_consistency
+notes: "Sets the consistency weight to zero."
+defaults:
+  - model/reconciliation.yaml
+  - data/cohort.yaml
+  - train/protocol.yaml
+train:
+  consistency_weight: 0.0

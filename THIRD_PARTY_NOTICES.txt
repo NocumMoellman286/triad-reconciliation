@@ -1,0 +1,46 @@
+Third-party components and data sources
+=======================================
+
+No third-party data is redistributed by this release. The analysed cohort is private and no
+record from it ships. The auxiliary corpora below are named by the manuscript and are used
+only for representation pretraining; each remains governed by its own terms, and no image or
+table from any of them is included here.
+
+Datasets named by the manuscript
+--------------------------------
+
+PAPILA
+  Source    : https://figshare.com/articles/dataset/PAPILA/14798004
+  Descriptor: https://doi.org/10.1038/s41597-022-01388-1
+  Licence   : GPL 3.0+ as stated on the deposition page
+  Note      : the descriptor asks to be cited rather than the deposition
+
+ACRIMA labelled fundus images
+  Source    : https://doi.org/10.1186/s12938-019-0649-y
+  Licence   : distributed for research use; no separate licence statement on the article page
+
+RIM-ONE DL
+  Source    : https://github.com/miag-ull/rim-one-dl
+  Licence   : research and educational use, free of charge; redistribution and commercial use
+              prohibited, as stated in the repository README
+
+ODIR-5K
+  Source    : https://odir2019.grand-challenge.org/
+  Licence   : challenge terms as specified on the challenge page
+
+Software dependencies
+---------------------
+
+PyTorch            BSD-3-Clause   https://github.com/pytorch/pytorch
+NumPy              BSD-3-Clause   https://github.com/numpy/numpy
+SciPy              BSD-3-Clause   https://github.com/scipy/scipy
+PyYAML             MIT            https://github.com/yaml/pyyaml
+pytest             MIT            https://github.com/pytest-dev/pytest
+ruff               MIT            https://github.com/astral-sh/ruff
+black              MIT            https://github.com/psf/black
+isort              MIT            https://github.com/PyCQA/isort
+mypy               MIT            https://github.com/python/mypy
+
+Each dependency is used through its published interface under its own licence; none of their
+source is modified or redistributed here beyond the pinned version constraints in
+requirements.txt.
